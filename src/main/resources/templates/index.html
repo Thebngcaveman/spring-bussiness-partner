@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <a th:href="newPartner">Add new partner</a>
+    <table border="1" cellpadding="10">
+        <thead>
+         <tr>
+             <th>Company Name</th>
+             <th>Company Type</th>
+             <th>Company Bound</th>
+             <th>Actions</th>
+         </tr>
+        </thead>
+        <tbody>
+            <tr th:each="partner: ${listOfPartners}">
+                <td th:text="${partner.name}">name</td>
+                <td th:text="${partner.companyType}">company type</td>
+                <td th:text="${partner.partnerBound}">bound</td>
+                <td>
+                    <a th:href="@{'/edit/' + ${partner.id}}">Edit</a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a th:href="@{'/delete/' + ${partner.id}}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

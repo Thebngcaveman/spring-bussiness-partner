@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <form action="#" th:action="@{/savePartner}" th:object="${newPartner}" method="POST">
+        <table border="0" cellpadding="10">
+            <input type="text" th:field="*{name}" placeholder="insert company name"/><br/>
+            <input type="text" th:field="*{companyType}" placeholder="insert which type of company"/><br/>
+            <input type="text" th:field="*{partnerBound}" placeholder="insert how close are we"/><br/>
+            <button type="submit">SUBMIT</button>
+        </table>
+    </form>
+</div>
+</body>
+</html>
